@@ -1,6 +1,5 @@
-import React from "react";
-import { Select } from "antd";
 import React, { useState } from "react";
+import { Select } from "antd";
 import ProductsTable from "./ProductsTable";
 function SelectProduct() {
   const [selectedProduct, setSelectedProduct] = useState();
@@ -33,7 +32,7 @@ function SelectProduct() {
     var hasSameName = false;
     for (let i = 0; i < cartProducts.length; i++) {
       const cartProduct = cartProducts[i];
-      if (cartProduct.name == selectedProduct.name) {
+      if (cartProduct.name === selectedProduct.name) {
         cartProduct.quantity++;
         hasSameName = true;
         cartProduct.subtotal = cartProduct.quantity * cartProduct.srp;

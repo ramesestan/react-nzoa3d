@@ -1,11 +1,16 @@
 import React from "react";
 import "./style.css";
-import SelectProduct from './SelectProduct';
+import SelectProduct from "./SelectProduct";
 import "antd/dist/antd.css";
+import Products from "./Products";
+
 export default function App() {
   return (
     <div>
-      <SelectProduct />
+      <div>
+        <Products />
+        {/* <SelectProduct /> */}
+      </div>
     </div>
   );
 }

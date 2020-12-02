@@ -36,15 +36,23 @@ function ProductsTable(props) {
     }
   ];
   var total = 0;
+  var resellersTotal = 0;
   for (let index = 0; index < cartProducts.length; index++) {
     const cartProduct = cartProducts[index];
     console.log(cartProduct);
     total += cartProduct.subtotal;
+    resellersTotal += cartProduct.reseller_price * cartProduct.quantity;
   }
+
   return (
     <div>
       <Table dataSource={cartProducts} columns={columns} />
-      <div>Total: {total}</div>
+
+      <div>
+        Total: {total}
+        <br />
+        Resellers Total: {resellersTotal}
+      </div>
     </div>
   );
 }
