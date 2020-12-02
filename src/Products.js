@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { Input, Button, Table } from "antd";
+import { Input, Button, Table, Select } from "antd";
 function Products(props) {
   const cartProducts = props.cartProducts;
+  const { Option } = Select;
   const columns = [
     {
       title: "Product Name",
@@ -23,16 +24,6 @@ function Products(props) {
       dataIndex: "srp",
       key: "srp"
     }
-    // {
-    //   title: "Quantity",
-    //   dataIndex: "quantity",
-    //   key: "quantity"
-    // },
-    // {
-    //   title: "Subtotal",
-    //   dataIndex: "subtotal",
-    //   key: "subtotal"
-    // }
   ];
   const PRODUCTS = [
     {
@@ -107,6 +98,10 @@ function Products(props) {
         Primary Button
       </Button>
       <Table dataSource={cartProducts} columns={columns} />
+      {/* <Products cartProducts={cartProducts} /> */}
+      {PRODUCTS.map((product, index) => {
+        return <Option value={index}>{product.name}</Option>;
+      })}
     </div>
   );
 }

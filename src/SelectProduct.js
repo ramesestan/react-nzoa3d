@@ -21,10 +21,7 @@ function SelectProduct() {
   ];
 
   function onChange(index) {
-    //on select get product details
-    // console.log(PRODUCTS[index]);
     var selectedProduct = PRODUCTS[index];
-    // console.log(selectedProduct);
     selectedProduct.quantity = 1;
     selectedProduct.subtotal = selectedProduct.srp;
     setSelectedProduct(PRODUCTS[index].name);
@@ -45,22 +42,15 @@ function SelectProduct() {
       productsAddedToCart.push(selectedProduct);
     }
     setCartProducts(productsAddedToCart);
-    // display array
-    // console.log(productsAddedToCart);
   }
 
   function onBlur() {
-    // console.log("blur");
     setSelectedProduct(undefined);
   }
 
-  function onFocus() {
-    // console.log("focus");
-  }
+  function onFocus() {}
 
-  function onSearch(product) {
-    // console.log("search:", product);
-  }
+  function onSearch(product) {}
 
   return (
     <div>
